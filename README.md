@@ -8,7 +8,7 @@ The dataset contains 2000 records.
 Feature:
 - Get the `content` elements of posts.
 - Filter the content of posts leaving `Chinese` and `Number`.
-
+- Use Jieba to remove the stopwords
 ## Label
 Use six labels to decide the author‘s political spectrum: 
 
