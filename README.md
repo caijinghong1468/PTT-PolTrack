@@ -12,7 +12,9 @@ Feature:
 ## Label
 Use six labels to decide the author‘s political spectrum: 
 
-![](/img/label.png)
+
+<img src="/img/label.png" alt=" "  width=200px height=240px/>
+
 
 ## Feature
 Use `TF-IDF` (term frequency–inverse document frequency）as feature.
