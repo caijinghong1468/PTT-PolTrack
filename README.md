@@ -1,5 +1,35 @@
 # ML_PROJ
 This is a machine learning project aimed at determining an author’s political spectrum on the PTT political page.
+
+
+## 解釋model以及label(標準答案)、feature(特徵值)的關係
+
+`label`：可以想成這個些資料的標準答案，model會利用這些標準答案去學習。  
+`feature`：特徵值就像是把每個文章的關鍵字抓出來。  
+
+我們把每個文章的feature(關鍵字)以及label(標準答案)丟給model做學習，因此當model遇到新的文章時，看到之前學習過的feature(關鍵字)就可以推算出label(標準答案)。  
+當然model不會每次都有辦法預測的精準，所以我們的報告要做的是比較不同model預測出來的數據，哪些較好、哪些較差。
+
+<img src="/img/text.png" alt=" "  >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Environment
 ---
 |**Environment**|**Version**|
