@@ -18,10 +18,10 @@ This is a machine learning project aimed at determining an author’s political 
 |**beautifulsoup4**|**pip install beautifulsoup4**|**4.9.3**|
 
 ---
-## 研究動機
+## Research Motivation 
 
 
-## 欲解決的問題
+## Issue
 ```
 以PEST分析來看，
 P(政治)
