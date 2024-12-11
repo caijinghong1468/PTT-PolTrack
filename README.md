@@ -1,5 +1,5 @@
-# ml_proj
-It's a machine learning project of determining an author‘s political spectrum on ptt political page 
+# ML_Proj
+This is a machine learning project aimed at determining an author’s political spectrum on the PTT political page.
 ## Environment
 ---
 |**Environment**|**Version**|
@@ -19,21 +19,21 @@ It's a machine learning project of determining an author‘s political spectrum 
 ---
 
 ## Web crawler
-In `webcrawler.ipynb`, it's implemented to gather the posts on ptt political page using `Python`.  
+In `webcrawler.ipynb`, a `Python` implementation is used to gather posts from the PTT political page.
 
-The dataset contains 2000 records.  
+The dataset contains 1327 records.  
 
 Feature:
-- Get the elements of contents on posts.
-- Filter the content of posts leaving `Chinese` and `Number`.
-- Use `Jieba` to remove the `stopwords`.
+- Extract content elements from posts.
+- Filter post content, retaining only `Chinese` characters and `numbers`.
+- Use `Jieba` to remove `stopwords`.
 ## Label
-Use six labels to decide the author‘s political spectrum: 
+Six labels are used to classify the author’s political spectrum:
 
 
 <img src="/img/label.png" alt=" "  width=200px height=240px/>
 
 
 ## Feature
-Use `TF-IDF` (term frequency–inverse document frequency）as feature.
+Use `TF-IDF` (term frequency–inverse document frequency）as feature representation.
 
