@@ -67,3 +67,10 @@ Six labels are used to classify the author’s political spectrum:
 ## Feature
 Use `TF-IDF` (term frequency–inverse document frequency）as feature representation.
 
+
+## Model
+
+
+## Analysis
+
+## Conclusion
