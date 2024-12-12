@@ -45,6 +45,8 @@ This is a machine learning project aimed at determining an author’s political 
 |**jieba**|**pip install jieba**|**0.42.1**|
 |**pandas**|**pip install pandas**|**2.2.2**|
 |**requests**|**pip install requests**|**2.25.1**|
+|**matplotlib**|**pip install matplotlib**|**24.3.1**|
+|**scikit-learn**|**pip install scikit-learn**|**24.3.1**|
 |**beautifulsoup4**|**pip install beautifulsoup4**|**4.9.3**|
 
 ---
