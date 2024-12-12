@@ -12,13 +12,14 @@
 `feature`：特徵值就像是把每個文章的關鍵字抓出來。  
 
 我們把每個文章的feature(關鍵字)以及label(標準答案)丟給model(模型)做學習，因此當model(模型)遇到新的文章時，看到之前學習過的feature(關鍵字)就可以推算出label(標準答案)。  
-簡單來說，模型會利用特徵來學習特徵與標籤之間的對應關係，從而在未知資料上做出預測。
+簡單來說，模型會利用特徵來學習特徵與標籤之間的對應關係，從而在未知資料上做出預測。  
 當然model不會每次都有辦法預測的精準，所以我們的報告要做的是比較不同model預測出來的數據，哪些較好、哪些較差。
 
 <img src="/img/text.png" alt=" "  >
 
 ## 研究動機
-
+有感於近期政治的混亂，三個黨派在網路上互相鬥爭，以及之前在系上lab參觀時，看到學長姐在做政治相關的機器學習研究，所以想到利用機器學習
+判斷PTT黑特政治版的文章的政治傾向。
 
 ## 欲解決的問題
 ```
@@ -67,13 +68,39 @@
 
 ## 特徵值
 使用 TF-IDF 作為特徵表示方法  
-### 介紹 TF-IDF（Term Frequency - Inverse Document Frequency） 
 TF-IDF 是一種用於資訊檢索與文字探勘的常用加權技術，是一種統計方法，用來評估每個字對於一份文件的重要程度。  
 
+## 模型種類與數據
+#### 1. Decision Tree (DT):
+- accuracy: 0.5
+- precision: 0.48
+- recall: 0.28
+- fscore: 0.31
 
-## 模型
+#### 2. Random Forest (RF)
+- accuracy: 0.5
+- precision: 0.48
+- recall: 0.28
+- fscore: 0.31
 
+#### 3. Logistic Regression (LR)
+- accuracy: 0.5
+- precision: 0.48
+- recall: 0.28
+- fscore: 0.31
 
-## 分析
+#### 4. Support Vector Classifier (SVC)
+- accuracy: 0.5
+- precision: 0.48
+- recall: 0.28
+- fscore: 0.31
+
+#### 4. Multinomial Naive Bayes (NB)
+- accuracy: 0.5
+- precision: 0.48
+- recall: 0.28
+- fscore: 0.31
+
+## 結果分析
  
 ## 結論
