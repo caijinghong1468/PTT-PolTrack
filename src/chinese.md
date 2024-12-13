@@ -52,7 +52,7 @@
 ## 網頁爬蟲
 在 `webcrawler.ipynb` 中，使用了 `Python` 實作來抓取 PTT 黑特政治版的文章。
 
-資料集有 1327 筆數據。
+資料集有 1230 筆數據。
 
 功能:
 - 從文章中提取內容元素
@@ -67,39 +67,35 @@
 
 
 ## 特徵值
-使用 TF-IDF 作為特徵表示方法  
-TF-IDF 是一種用於資訊檢索與文字探勘的常用加權技術，是一種統計方法，用來評估每個字對於一份文件的重要程度。  
-
+1. TF-IDF  
+   TF-IDF 是一種用於資訊檢索與文字探勘的常用加權技術，是一種統計方法，用來評估每個字對於一份文件的重要程度。  
+2. BOW  
+   基於單詞出現頻率來表示文字的方法
 ## 模型種類與數據
-#### 1. Decision Tree (DT):
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
+### TF-IDF
+#### 1. Logistic Regression (LR)
+accuracy: 0.6
+precision: 0.31
+recall: 0.35
+fscore: 0.32
+#### 2. Support Vector Classifier (SVC)
+accuracy: 0.51
+precision: 0.31
+recall: 0.29
+fscore: 0.24
 
-#### 2. Random Forest (RF)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
+### BOW
+#### 1. Logistic Regression (LR)
+accuracy: 0.64
+precision: 0.66
+recall: 0.53
+fscore: 0.57
 
-#### 3. Logistic Regression (LR)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
-
-#### 4. Support Vector Classifier (SVC)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
-
-#### 4. Multinomial Naive Bayes (NB)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
+#### 2. Support Vector Classifier (SVC)
+accuracy: 0.61
+precision: 0.67
+recall: 0.49
+fscore: 0.54
 
 ## 結果分析
  
