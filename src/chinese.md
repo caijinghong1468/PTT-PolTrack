@@ -63,7 +63,7 @@
 ## 標籤
 使用四個標籤來分類文章的政治傾向：
 
-<img src="/img/label.png" alt=" "  width=200px height=240px/>
+<img src="/img/label.png" alt=" " />
 
 
 ## 特徵值
