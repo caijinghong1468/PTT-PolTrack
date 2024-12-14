@@ -3,7 +3,7 @@
 這是一個機器學習專案，在判定PTT黑特政治版文章的政治傾向
 
 ## 整個流程簡介
-#### 從PPT抓取資料 --> 初步過濾文章內容 --> 使用Jieba進行斷詞 --> 過濾斷詞結果中的停用詞 --> 進行模型訓練 --> 產生結果後做不同模型的比較
+#### 從PPT抓取資料 --> 初步過濾文章內容 --> 使用Jieba進行斷詞 --> 過濾斷詞結果中的停用詞 --> 進行模型訓練 --> 產生結果後針對使用不同特徵對模型比較
 
 ## 解釋model(模型)及label(標準答案)、feature(特徵值)的關係
 
@@ -52,7 +52,7 @@
 ## 網頁爬蟲
 在 `webcrawler.ipynb` 中，使用了 `Python` 實作來抓取 PTT 黑特政治版的文章。
 
-資料集有 1327 筆數據。
+資料集有 1230 筆數據。
 
 功能:
 - 從文章中提取內容元素
@@ -67,40 +67,39 @@
 
 
 ## 特徵值
-使用 TF-IDF 作為特徵表示方法  
-TF-IDF 是一種用於資訊檢索與文字探勘的常用加權技術，是一種統計方法，用來評估每個字對於一份文件的重要程度。  
-
+1. TF-IDF  
+   TF-IDF 是一種用於資訊檢索與文字探勘的常用加權技術，會降低在多數文件中出現頻繁的詞的重要性，增強對低頻但具有區分度詞彙的影響，用來評估每個字對於一份文件的重要程度。  
+2. BOW  
+   基於單詞出現頻率來表示文字的方法，對於詞彙的權重未做調整，容易導致高頻的詞對模型產生很大的影響。
 ## 模型種類與數據
-#### 1. Decision Tree (DT):
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
+### TF-IDF
+#### 1. Logistic Regression (LR)
+accuracy: 0.6
+precision: 0.31
+recall: 0.35
+fscore: 0.32
+#### 2. Support Vector Classifier (SVC)
+accuracy: 0.51
+precision: 0.31
+recall: 0.29
+fscore: 0.24
 
-#### 2. Random Forest (RF)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
+### BOW
+#### 1. Logistic Regression (LR)
+accuracy: 0.64
+precision: 0.66
+recall: 0.53
+fscore: 0.57
 
-#### 3. Logistic Regression (LR)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
-
-#### 4. Support Vector Classifier (SVC)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
-
-#### 4. Multinomial Naive Bayes (NB)
-- accuracy: 0.5
-- precision: 0.48
-- recall: 0.28
-- fscore: 0.31
+#### 2. Support Vector Classifier (SVC)
+accuracy: 0.61
+precision: 0.67
+recall: 0.49
+fscore: 0.54
 
 ## 結果分析
- 
+我們發現政治文章有個很明顯的特徵，就是常常會有很多重要的詞被重複，那些詞都是影響標籤正確性的關鍵，舉例來說文章內有「綠蛆、塔綠班」這幾個字通常八九成就是民進黨黑。  
+在特徵值中，BOW是直接計算詞出現數量，所以導致高頻的詞會對模型產生很大的影響。然而TF-IDF會降低在多數文件中高頻詞的重要性，增強低頻且區分度高得詞彙的影響。  
+因此我們認為在兩個模型中，使用BOW所訓練出的模型四個數值全部都比TF-IDF更高的原因，就是因為上述所說的關係，可以歸納出我們的數據較適合用BOW。
+
 ## 結論
