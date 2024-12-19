@@ -73,6 +73,7 @@ Use `TF-IDF` (term frequency–inverse document frequency）and `BOW` as feature
 
 ## Model
 
+<img src="/img/model_result.png" alt=" " />
 
 ## Analysis
 
