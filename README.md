@@ -2,33 +2,6 @@
 This is a machine learning project aimed at determining an author’s political spectrum on the PTT political page.
 
 
-## 解釋model以及label(標準答案)、feature(特徵值)的關係
-
-`label`：可以想成這個些資料的標準答案，model會利用這些標準答案去學習。  
-`feature`：特徵值就像是把每個文章的關鍵字抓出來。  
-
-我們把每個文章的feature(關鍵字)以及label(標準答案)丟給model做學習，因此當model遇到新的文章時，看到之前學習過的feature(關鍵字)就可以推算出label(標準答案)。  
-當然model不會每次都有辦法預測的精準，所以我們的報告要做的是比較不同model預測出來的數據，哪些較好、哪些較差。
-
-<img src="/img/text.png" alt=" "  >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Environment
 ---
@@ -51,32 +24,30 @@ This is a machine learning project aimed at determining an author’s political 
 
 ---
 ## Research Motivation 
+```
+   有感於臺灣近年來國民黨（藍）與民進黨（綠）間競爭越來越白熱化，加以今年選舉中民眾黨又成為國會的關鍵少數，近三十年來的藍綠廝殺
+中出現新的競爭者，給予臺灣政治版圖帶來新的樣貌，卻也帶來新的爭論。  
 
+   近期又爆發民眾黨（白）黨黨主席柯文哲的京華城案以及中央勞動部的公務員輕生案，民眾對於各黨間的討論更為熱烈。
 
+   部分支持藍綠白黨派的民眾會在PTT黑特政治版發表文章，而由於發文者不一定會明確表示自身的政治傾向，因此我們透過文章中的關鍵字詞  
+來判斷各文章的政治傾向。
+```
 ## Issue
 ```
-1.  以PEST分析來看，
-    P(政治)
-    企業需了解政策走向及相關利益相關方的政治立場，進而調整應對策略。
-    E(經濟)
-    消費者信任與品牌價值：品牌在多元化市場中，需避免觸碰政治敏感地帶。
-    S(社會)
-    社交媒體上的激進或極端內容可能威脅公共秩序，或有帶風向的可能。
-    T(技術)
-    AI模型容易因網路上客觀性的數據偏差而產生不當的政治傾向分析，可能引發爭議。
-  
-    （濃縮版）
-    企業需根據政策趨勢與利益相關方立場調整策略，避免觸及政治敏感議題以維護品牌信任。
-    在社會層面，需警惕社交媒體上的極端內容可能影響公共秩序與輿論方向；
-    技術層面則需注意AI因數據偏差引發政治傾向爭議，確保分析的客觀性與公正性。
+   政黨可藉由文章的觀點來區分敵我方，了解人民當前對自身的正負面評價。  
 
-2.  媒體釋讀:
-    可以看自己看得文章立場是不是很相似，
-    可以確保自己是不是在同溫層
+   從正面來看，執政黨可藉此檢視、調整政策以符合人民的需求；在野黨則可在了解人民的需求下監督執政黨是否落實，或在下次選舉前提出相  
+關政策，以獲得人民支持，贏得選舉。    
 
-3.  風向判斷:
-    政黨可以知道現在網路上風向是怎麼樣。
-    如果有大量負評語好評，可以推測哪個政黨有在用網軍，去加以應對。
+   而從負面的角度來看，政黨間競爭時可能會透過「買網軍」的方式來攻擊、抹黑敵對政黨，此時便可透過這個模型來判斷。如出現大量類似攻
+擊某政黨的言論，該政黨便可藉此應對並反擊。
+```
+## Purpoes
+```
+   在偵測每篇文章政治傾向後，綜合看整體留言趨勢，了解網路上的風向，政黨便可藉此購買網軍。執政黨可以透過網軍來壓迫反對的聲音，鞏  
+固自身地位，主導輿論風向，進而獲得下午選舉的連任資格；同樣的，在野黨也可利用這個方式來打擊執政黨，塑造有利於自身形象的言論，進而  
+獲得人民的支持。
 ```
 ## References
 [PPT HatePolitics](https://www.ptt.cc/bbs/HatePolitics/index.html)	
@@ -91,14 +62,14 @@ Feature:
 - Filter post content, retaining only `Chinese` characters and `numbers`.
 - Use `Jieba` for removing `stopwords`  and incorporating a `custom dictionary` to tailor the segmentation process in article
 ## Label
-Six labels are used to classify the author’s political spectrum:
+Four labels are used to classify the author’s political spectrum:
 
-<img src="/img/label.png" alt=" "  width=200px height=240px/>
+<img src="/img/label.png" alt=" "  width=240px height=240px/>
 
 
 ## Feature
-Use `TF-IDF` (term frequency–inverse document frequency）as feature representation.
 
+Use `TF-IDF` (term frequency–inverse document frequency）and `BOW` as feature representation.
 
 ## Model
 
