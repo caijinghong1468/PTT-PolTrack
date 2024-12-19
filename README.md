@@ -72,9 +72,26 @@ Four labels are used to classify the author’s political spectrum:
 Use `TF-IDF` (term frequency–inverse document frequency）and `BOW` as feature representation.
 
 ## Model
-
+- Logistic Regression
+- Support Vector Machine
 <img src="/img/model_result.png" alt=" " />
 
 ## Analysis
+#### 1. 數據上顯現出BOW訓練出來的都比TF-IDF好很多:  
+```
+   我們發現政治文章中有個很明顯的特徵，常常會有很多重要的詞重複出現，那些詞都是影響標籤正確性的關鍵。在特徵值中，BOW是直接計算詞出現數量  
+，所以導致高頻的詞會對模型產生很大的影響。然而TF-IDF是相反的，會降低在多數文件中高頻詞的重要性，增強低頻且區分度高的詞彙的影響。  
+  
+   兩模型中，使用BOW所訓練出的模型四個數值全部都比TF-IDF來的好，因此結果也證明我們的數據較適合用BOW來訓練。
+```
 
+#### 2. 在BOW之下，LR與SVM比較:  
+```
+   兩模型四個數據中只有precision這項數值差異較大，而我也認為如果要推給政黨的model中precision會是一項重要的指標，因為（政黨立場差異模糊） 
+在某些文章中，可能存在政黨立場差異模糊，特別是當文本表達較為中立時，分類模型會較難區分我敵我方，因此可判斷SVM比較適合。
+```
 ## Conclusion
+
+#### 怎麼促使政黨使用?  
+- 風險容忍度： 如果政黨更關心避免錯誤判斷，例如：錯誤預測政治傾向，precision 就是一個關鍵指標
+- 使用 SVM 分析文章或評論，區分支持或反對政黨的文本，提供輿論監測工具，協助執政黨或在野黨即時掌握民意
