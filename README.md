@@ -1,5 +1,5 @@
 # PTT-PolTrack
-This is a machine learning project aimed at determining an author’s political spectrum on the PTT political page.
+This is a machine learning project aimed at determining an author’s political alignment on the PTT political page.
 
 
 
