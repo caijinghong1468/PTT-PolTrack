@@ -1,4 +1,4 @@
-# ML_PROJ
+# PTT-PolTrack
 This is a machine learning project aimed at determining an author’s political spectrum on the PTT political page.
 
 
